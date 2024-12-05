@@ -1,22 +1,22 @@
 #include <iostream>
-#include "Microwave.h"
+#include "Laserp.h"
 
 using namespace std;
 
 int main() {
-    Microwave microwave; // Создание объекта
+    Laser laser; // Создание объекта
     int choice;
-    int timeValue, powerValue;
-    string foodValue;
+    int deepValue, powerValue;
+    string materialValue;
 
     do {
         cout << "\nМеню:\n";
-        cout << "1. Показать состояние СВЧ-печи\n";
-        cout << "2. Включить СВЧ-печь\n";
-        cout << "3. Выключить СВЧ-печь\n";
-        cout << "4. Установить время приготовления\n";
+        cout << "1. Показать состояние Лазерного принтера\n";
+        cout << "2. Включить Лазерный принтер\n";
+        cout << "3. Выключить Лазерный принтер\n";
+        cout << "4. Установить глубину гравировки\n";
         cout << "5. Установить уровень мощности\n";
-        cout << "6. Установить тип пищи\n";
+        cout << "6. Установить материал\n";
         cout << "0. Выход\n";
         cout << "Выберите действие: ";
         cin >> choice;
@@ -32,9 +32,9 @@ int main() {
                 microwave.turnOff();
                 break;
             case 4:
-                cout << "Введите время приготовления в секундах: ";
-                cin >> timeValue;
-                microwave.setTime(timeValue);
+                cout << "Введите глубину гравировки в десятых миллиметра: ";
+                cin >> deepValue;
+                microwave.setDeep(deepValue);
                 break;
             case 5:
                 cout << "Введите уровень мощности (1-10): ";
@@ -42,9 +42,9 @@ int main() {
                 microwave.setPowerLevel(powerValue);
                 break;
             case 6:
-		cout << "Введите тип пищи (например, мясо, овощи): ";
-                cin >> foodValue;
-                microwave.setFoodType(foodValue);
+		cout << "Введите материал (например, фанера, латунь): ";
+                cin >> materialValue;
+                microwave.setMaterial(materialValue);
                 break;
             case 0:
                 cout << "Выход...\n";
